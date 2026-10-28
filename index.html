@@ -3,19 +3,52 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ulmocus Seçim · Knesset 2026</title>
-<meta name="description" content="İsrail 26. Knesset seçimi (27 Ekim 2026): canlı sayım, sandalye dağılımı, şehir sonuçları.">
+<title>Ulmocus Seçim</title>
+<meta name="description" content="Ulmocus Seçim: Türkçe canlı seçim sonuçları. Aktif: ABD 3 Kasım 2026 ara seçimleri. Geçmiş: İsrail 26. Knesset seçimi.">
 <style>body{margin:0;font:15px system-ui,sans-serif;background:#EEF1F5;color:#141B26;display:grid;place-items:center;min-height:100vh}@media(prefers-color-scheme:dark){body{background:#0E131B;color:#E6EBF2}}</style>
 </head>
 <body>
 <p>Yükleniyor…</p>
 <script>
-// Sayfanın kendisi yedek adresten yüklenir; ana adresin yayını gecikse de en güncel sürüm görünür.
-var SRC = "https://raw.githubusercontent.com/erdemnope-hash/ulmocus-secim/main/index.html";
-fetch(SRC + "?t=" + Date.now(), { cache: "no-store" })
-  .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
-  .then(function (h) { document.open(); document.write(h); document.close(); })
-  .catch(function () { location.replace("https://erdemnope-hash.github.io/ulmocus-secim/"); });
+(function () {
+// Ulmocus Seçim yükleyicisi: seçilen seçimin sayfasını raw.githubusercontent.com'dan yükler (Pages yayınına bağlı değil)
+// ve üste "Aktif seçimler / Geçmiş seçimler" menüsünü ekler. Adres: ?secim=<kimlik>; varsayılan ilk aktif seçim.
+var SECIMLER = [
+  { id: "abd-2026", ad: "ABD 2026 ara seçimleri", tarih: "3 Kasım 2026", durum: "aktif", repo: "ulmocus-secim/abd-2026" },
+  { id: "knesset-2026", ad: "İsrail 26. Knesset seçimi", tarih: "27 Ekim 2026", durum: "gecmis",
+    src: "https://raw.githubusercontent.com/erdemnope-hash/ulmocus-secim/main/index.html", yedek: "https://erdemnope-hash.github.io/ulmocus-secim/" }
+];
+var q = (location.search.match(/[?&]secim=([\w-]+)/) || [])[1];
+var S = SECIMLER.filter(function (s) { return s.id === q; })[0] || SECIMLER.filter(function (s) { return s.durum === "aktif"; })[0] || SECIMLER[0];
+function link(s) { return "?secim=" + s.id; }
+function menu() {
+  var dark = matchMedia("(prefers-color-scheme: dark)").matches, bg = dark ? "#0B1017" : "#141B26";
+  var grp = function (baslik, durum) {
+    var l = SECIMLER.filter(function (s) { return s.durum === durum; });
+    return '<details style="position:relative"><summary style="cursor:pointer;list-style:none;padding:6px 12px;border-radius:99px;border:1px solid #3A4555;' +
+      (l.some(function (s) { return s.id === S.id; }) ? 'background:#E6EBF2;color:#141B26;' : '') + '">' + baslik + ' ▾</summary>' +
+      '<div style="position:absolute;top:110%;left:0;z-index:50;background:' + bg + ';border:1px solid #3A4555;border-radius:10px;padding:6px;min-width:250px;box-shadow:0 8px 24px rgba(0,0,0,.3)">' +
+      (l.length ? l.map(function (s) { return '<a href="' + link(s) + '" style="display:block;color:#E6EBF2;text-decoration:none;padding:8px 10px;border-radius:6px' +
+        (s.id === S.id ? ';background:#2A3444' : '') + '"><b>' + s.ad + '</b><br><span style="font-size:12px;color:#98A3B3">' + s.tarih + '</span></a>'; }).join("")
+        : '<div style="padding:8px 10px;color:#98A3B3">Şu an yok</div>') + '</div></details>';
+  };
+  var n = document.createElement("nav");
+  n.setAttribute("style", "position:relative;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 16px;background:" + bg + ";color:#E6EBF2;font:600 14px system-ui,sans-serif");
+  n.innerHTML = '<a href="./" style="color:#E6EBF2;text-decoration:none;margin-right:6px">Ulmocus Seçim</a>' + grp("Aktif seçimler", "aktif") + grp("Geçmiş seçimler", "gecmis");
+  document.body.insertBefore(n, document.body.firstChild);
+  document.addEventListener("click", function (e) { n.querySelectorAll("details").forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute("open"); }); });
+}
+function yaz(h) { document.open(); document.write(h); document.close(); if (document.body) menu(); else addEventListener("DOMContentLoaded", menu); }
+function al(u) { return fetch(u, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }); }
+var p;
+if (S.repo) {
+  // Son commit'in sayfası (dal adresi ~5 dk önbellekli olabilir; commit adresi her zaman günceldir)
+  p = fetch("https://api.github.com/repos/" + S.repo + "/commits/main", { headers: { Accept: "application/vnd.github.sha" }, cache: "no-store" })
+    .then(function (r) { return r.ok ? r.text() : "main"; }).catch(function () { return "main"; })
+    .then(function (sha) { return al("https://raw.githubusercontent.com/" + S.repo + "/" + sha + "/index.html" + (sha === "main" ? "?t=" + Date.now() : "")); });
+} else p = al(S.src + "?t=" + Date.now());
+p.then(yaz).catch(function () { if (S.yedek) location.replace(S.yedek); else document.body.innerHTML = "<p>Sayfa yüklenemedi, lütfen yenileyin.</p>"; });
+})(); // yüklenen sayfanın değişkenleriyle çakışmasın diye her şey kapalı kapsamda
 </script>
 </body>
 </html>
