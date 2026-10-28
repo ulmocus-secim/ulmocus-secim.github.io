@@ -11,7 +11,7 @@
 <p>Yükleniyor…</p>
 <script>
 // Sayfanın kendisi yedek adresten yüklenir; ana adresin yayını gecikse de en güncel sürüm görünür.
-var SRC = "https://erdemnope-hash.github.io/ulmocus-secim/index.html";
+var SRC = "https://raw.githubusercontent.com/erdemnope-hash/ulmocus-secim/main/index.html";
 fetch(SRC + "?t=" + Date.now(), { cache: "no-store" })
   .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
   .then(function (h) { document.open(); document.write(h); document.close(); })
