@@ -142,10 +142,18 @@ function menu() {
   n.innerHTML = '<a href="./" style="color:#E6EBF2;text-decoration:none;margin-right:6px">Ulmocus Seçim</a>' +
     grp(canli + "Aktif seçimler", "aktif") + grp("Gelecek seçimler", "gelecek") + grp("Geçmiş seçimler", "gecmis") +
     // Ulmocus canlı yayın bağlantıları (YouTube /live, yayın varsa doğrudan yayını açar)
-    '<span style="margin-left:auto;display:flex;align-items:center;gap:8px"><span style="color:#98A3B3;font-weight:600">' +
-    '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#EF4444;margin-right:6px"></span>Canlı yayın:</span>' +
-    '<a href="https://www.youtube.com/@ulmocus/live" target="_blank" rel="noopener" style="color:#fff;background:#DC2626;text-decoration:none;padding:6px 12px;border-radius:99px">▶ YouTube</a>' +
-    '<a href="https://kick.com/ulmocus" target="_blank" rel="noopener" style="color:#0B0E11;background:#53FC18;text-decoration:none;padding:6px 12px;border-radius:99px">Kick</a></span>';
+    '<style>@keyframes ulmNabiz{0%{box-shadow:0 0 0 0 rgba(239,68,68,.7)}70%{box-shadow:0 0 0 9px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}' +
+    '@keyframes ulmParla{0%,100%{filter:brightness(1)}50%{filter:brightness(1.18)}}' +
+    '.ulm-yayin{display:inline-flex;align-items:center;gap:8px;text-decoration:none;padding:8px 16px;border-radius:12px;font:800 15px system-ui,sans-serif;' +
+    'transition:transform .15s;animation:ulmParla 2.4s ease-in-out infinite}.ulm-yayin:hover{transform:translateY(-2px) scale(1.04)}' +
+    '@media(max-width:600px){.ulm-yayin{padding:7px 12px;font-size:14px}.ulm-yayin small,.ulm-canli{display:none}}</style>' +
+    '<span style="margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap">' +
+    '<span style="display:inline-flex;align-items:center;gap:7px;color:#FCA5A5;font:800 13px system-ui,sans-serif;letter-spacing:.08em">' +
+    '<span style="width:10px;height:10px;border-radius:50%;background:#EF4444;animation:ulmNabiz 1.6s infinite"></span><span class="ulm-canli">CANLI YAYIN</span></span>' +
+    '<a class="ulm-yayin" href="https://www.youtube.com/@ulmocus/live" target="_blank" rel="noopener" style="color:#fff;background:#FF0000;box-shadow:0 0 16px rgba(255,0,0,.55)">' +
+    '<svg width="24" height="17" viewBox="0 0 24 17" aria-hidden="true"><rect width="24" height="17" rx="4.5" fill="#fff"/><path d="M9.6 4.6v7.8L16.2 8.5z" fill="#FF0000"/></svg>YouTube<small style="font-weight:600;opacity:.9">\'da izle</small></a>' +
+    '<a class="ulm-yayin" href="https://kick.com/ulmocus" target="_blank" rel="noopener" style="color:#0B0E11;background:#53FC18;box-shadow:0 0 16px rgba(83,252,24,.5);animation-delay:1.2s">' +
+    '<span style="display:inline-grid;place-items:center;width:20px;height:20px;border-radius:4px;background:#0B0E11;color:#53FC18;font:900 14px system-ui,sans-serif">K</span>Kick<small style="font-weight:600;opacity:.85">\'te izle</small></a></span>';
   document.body.insertBefore(n, document.body.firstChild);
   siyasi(n, dark);
   liderler(dark);
