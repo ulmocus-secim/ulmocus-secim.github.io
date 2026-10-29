@@ -115,7 +115,12 @@ function menu() {
   n.setAttribute("style", "position:relative;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 16px;background:" + bg + ";color:#E6EBF2;font:600 14px system-ui,sans-serif");
   var canli = SECIMLER.some(function (s) { return s.durum === "aktif"; }) ? '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ADE80;margin-right:6px"></span>' : '';
   n.innerHTML = '<a href="./" style="color:#E6EBF2;text-decoration:none;margin-right:6px">Ulmocus Seçim</a>' +
-    grp(canli + "Aktif seçimler", "aktif") + grp("Gelecek seçimler", "gelecek") + grp("Geçmiş seçimler", "gecmis");
+    grp(canli + "Aktif seçimler", "aktif") + grp("Gelecek seçimler", "gelecek") + grp("Geçmiş seçimler", "gecmis") +
+    // Ulmocus canlı yayın bağlantıları (YouTube /live, yayın varsa doğrudan yayını açar)
+    '<span style="margin-left:auto;display:flex;align-items:center;gap:8px"><span style="color:#98A3B3;font-weight:600">' +
+    '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#EF4444;margin-right:6px"></span>Canlı yayın:</span>' +
+    '<a href="https://www.youtube.com/@ulmocus/live" target="_blank" rel="noopener" style="color:#fff;background:#DC2626;text-decoration:none;padding:6px 12px;border-radius:99px">▶ YouTube</a>' +
+    '<a href="https://kick.com/ulmocus" target="_blank" rel="noopener" style="color:#0B0E11;background:#53FC18;text-decoration:none;padding:6px 12px;border-radius:99px">Kick</a></span>';
   document.body.insertBefore(n, document.body.firstChild);
   siyasi(n, dark);
   liderler(dark);
