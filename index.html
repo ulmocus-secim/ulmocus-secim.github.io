@@ -139,7 +139,7 @@ function menu() {
   var n = document.createElement("nav");
   n.setAttribute("style", "position:relative;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 16px;background:" + bg + ";color:#E6EBF2;font:600 14px system-ui,sans-serif");
   var canli = SECIMLER.some(function (s) { return s.durum === "aktif"; }) ? '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ADE80;margin-right:6px"></span>' : '';
-  n.innerHTML = '<a href="./" style="color:#E6EBF2;text-decoration:none;margin-right:6px">Ulmocus Seçim</a>' +
+  n.innerHTML = '<a href="./" style="color:#E6EBF2;text-decoration:none;margin-right:6px">Ulmocus İle Seçim</a>' +
     grp(canli + "Aktif seçimler", "aktif") + grp("Gelecek seçimler", "gelecek") + grp("Geçmiş seçimler", "gecmis") +
     // Ulmocus canlı yayın bağlantıları (YouTube /live, yayın varsa doğrudan yayını açar)
     '<style>@keyframes ulmNabiz{0%{box-shadow:0 0 0 0 rgba(239,68,68,.7)}70%{box-shadow:0 0 0 9px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}' +
