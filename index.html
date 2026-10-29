@@ -21,34 +21,60 @@ var SECIMLER = [
   { id: "knesset-2026", ad: "İsrail 26. Knesset seçimi", tarih: "27 Ekim 2026", sayim: "2026-10-27T22:00:00+03:00", bitis: "2026-10-29T00:00:00+03:00",
     src: "https://raw.githubusercontent.com/erdemnope-hash/ulmocus-secim/main/index.html", yedek: "https://erdemnope-hash.github.io/ulmocus-secim/" }
 ];
-// "Siyasi meseleler" yazıları: sayfanın en üstündeki düğme, en alttaki bu bölüme götürür. Her rakam kaynaklarda var.
+// "Siyasi meseleler" yazıları: sayfanın üstündeki büyük şerit, en alttaki bu bölüme götürür. "## " ile başlayan satır ara başlıktır.
+// Her rakam ve olay altta bağlantısı verilen kaynaklarda var.
 var SIYASI = {
   "abd-2026": { guncel: "29 Ekim 2026", p: [
-    "Donald Trump Ocak 2025'te ikinci başkanlık dönemine başladı. Cumhuriyetçiler hem Beyaz Saray'ı hem de Kongre'nin iki kanadını elinde tutuyor: Senato'da 53'e 47, Temsilciler Meclisi'nde ise birkaç sandalyelik dar bir çoğunluk. Bu çoğunlukla vergi indirimleri ve harcama kesintilerini bir araya getiren büyük bütçe yasası (\"One Big Beautiful Bill\") Temmuz 2025'te geçti.",
-    "Gündemin merkezinde ekonomi var: gümrük vergileri, hayat pahalılığı ve enflasyon. Anketlerde seçmenlerin en büyük kaygısı fiyatlar; Trump'ın en düşük not aldığı konular da enflasyon ve ekonomi. Göç politikası ve sınır dışı etme operasyonları ile sağlık harcamaları da öne çıkan başlıklar. Ekim–Kasım 2025'te federal hükümet 43 gün kapalı kaldı; bu, ABD tarihinin en uzun kapanmasıydı.",
-    "Seçim haritaları da tartışmalı. Teksas'ın 2025'te seçim bölgelerini dönem ortasında Cumhuriyetçiler lehine yeniden çizmesiyle bir \"harita savaşı\" başladı; Kaliforniya Kasım 2025'te Önerme 50 ile Demokratlar lehine karşılık verdi, başka eyaletler de izledi. Bu yüzden bazı Meclis yarışları 2024'tekinden farklı sınırlarla yapılıyor.",
-    "Ekim sonu anketlerinde Trump'ın onay oranı çoğu ortalamada %37–40 arasında; genel kongre oylamasında Demokratlar 7–9 puan önde. Tahmin modelleri Demokratları Temsilciler Meclisi'nde açık, Senato'da ise hafif favori görüyor. Senato'yu almak için Demokratların net 4 koltuk kazanması gerekiyor (50–50'de oyu Cumhuriyetçi başkan yardımcısı JD Vance verir).",
-    "Sonuç neden önemli: Demokratlar Meclis'i kazanırsa bütçe ve yasa gündemini durdurabilir, soruşturma açabilir; Trump son iki yılını bölünmüş bir hükümetle geçirir. Cumhuriyetçiler iki kanadı da korursa Trump'ın gündemi büyük ölçüde engelsiz sürer." ],
+    "## Kim iktidarda?",
+    "Donald Trump Ocak 2025'te ikinci başkanlık dönemine başladı; başkan yardımcısı JD Vance. Cumhuriyetçiler Beyaz Saray'la birlikte Kongre'nin iki kanadını da elinde tutuyor. Senato'da 53 Cumhuriyetçiye karşı 45 Demokrat ve Demokratlarla birlikte hareket eden 2 bağımsız var; çoğunluk lideri John Thune, Demokratların lideri Chuck Schumer. Temsilciler Meclisi'nde Cumhuriyetçilerin çoğunluğu yalnızca birkaç sandalyelik.",
+    "Bu çoğunlukla Temmuz 2025'te vergi indirimlerini ve harcama kesintilerini bir araya getiren büyük bütçe yasası (\"One Big Beautiful Bill\") geçti. Buna karşılık Ekim–Kasım 2025'te bütçe anlaşmazlığı yüzünden federal hükümet 43 gün kapalı kaldı; bu, ABD tarihinin en uzun kapanmasıydı.",
+    "## Seçmenin gündemi",
+    "Anketlerde açık ara birinci konu hayat pahalılığı. Trump'ın geniş çaplı gümrük vergileri fiyatlar üzerinden tartışılıyor; Trump'ın en düşük not aldığı alanlar enflasyon ve ekonomi. Seçmenler ayrıca sağlık harcamaları, göç politikası ve yoğun sınır dışı etme operasyonları konusunda Kongre'nin başkanı denetlemesini istiyor. Enerji fiyatları ve yapay zekâ veri merkezlerine karşı yerel tepkiler de bazı eyaletlerde kampanyanın parçası.",
+    "## Harita savaşı",
+    "Seçim bölgeleri normalde nüfus sayımından sonra, on yılda bir çizilir. Teksas 2025'te bu kuralı bozup haritasını dönem ortasında Cumhuriyetçiler lehine yeniden çizdi. Kaliforniya Kasım 2025'te halk oylamasıyla kabul edilen Önerme 50 ile Demokratlar lehine karşılık verdi; başka eyaletler de iki taraftan izledi. Bu yüzden bazı Meclis yarışları 2024'tekinden farklı sınırlarla yapılıyor ve sonuçları doğrudan karşılaştırmak zor.",
+    "## Senato'da kritik yarışlar",
+    "Demokratların Senato'yu alması için net 4 koltuk kazanması gerekiyor; 50–50 eşitlikte oyu başkan yardımcısı Vance verir. Demokratların en çok umut bağladığı Cumhuriyetçi koltuklar: Thom Tillis'in emekliye ayrıldığı Kuzey Karolina (eski vali Roy Cooper), Susan Collins'in Maine'i, ara seçim yapılan Ohio (Sherrod Brown, Jon Husted'e karşı), Alaska (Mary Peltola) ve John Cornyn'in ön seçimi kaybettiği Teksas (Ken Paxton, James Talarico'ya karşı). Iowa ve Kansas da yakın izleniyor. Demokratların savunması gereken en riskli koltuklar ise Gary Peters'ın ayrıldığı Michigan, Jeanne Shaheen'in ayrıldığı New Hampshire ve Jon Ossoff'un Georgia'sı.",
+    "## Anketler ne diyor?",
+    "Ekim sonu ortalamalarında Trump'ın onay oranı %37–40 arasında; genel kongre oylamasında Demokratlar 7–9 puan önde. Tahmin modelleri Demokratları Temsilciler Meclisi'nde açık favori, Senato'da ise hafif favori görüyor; ancak Cumhuriyetçi stratejistler Senato'yu bir iki koltuk farkla koruyabileceklerini savunuyor.",
+    "## Sonuç neden önemli?",
+    "Demokratlar Meclis'i kazanırsa bütçe ve yasa gündemini durdurabilir, yönetim hakkında soruşturma açabilir; Trump son iki yılını bölünmüş bir hükümetle geçirir. Senato da el değiştirirse başkanın atadığı yargıç ve bakanların onayı zorlaşır. Cumhuriyetçiler iki kanadı da korursa Trump'ın gündemi büyük ölçüde engelsiz sürer. Görevden alma (impeachment) için Meclis'te salt çoğunluk yeterli olsa da görevden uzaklaştırma Senato'da 67 oy ister; bu seçim tek başına bunu mümkün kılmaz." ],
     k: [["NPR anketi (21 Ekim 2026)", "https://www.npr.org/2026/10/21/nx-s1-6011179/poll-democrats-republicans-trump-approval"],
         ["PBS son anket", "https://www.pbs.org/newshour/politics/poll-likely-voters-favor-democrats-as-trump-disapproval-drives-early-turnout"],
         ["The Conversation (26 Ekim 2026)", "https://theconversation.com/democrats-remain-clear-favourites-to-gain-control-of-congress-at-midterms-as-trumps-ratings-slide-again-295134"],
+        ["Vikipedi: 2026 Senato seçimleri", "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"],
         ["Vikipedi: 2026 ABD seçimleri", "https://en.wikipedia.org/wiki/2026_United_States_elections"]] },
   "yeni-zelanda-2026": { guncel: "29 Ekim 2026", p: [
-    "2023 seçiminden bu yana Başbakan Christopher Luxon'un National partisi, ACT ve NZ First ile üçlü koalisyon hükümeti yürütüyor. Ana muhalefet Chris Hipkins liderliğindeki Labour; Yeşiller ve Te Pāti Māori de muhalefette. Koalisyon anlaşması gereği başbakan yardımcılığı Mayıs 2025'te NZ First lideri Winston Peters'tan ACT lideri David Seymour'a geçti.",
-    "Kampanyanın ana konuları hayat pahalılığı, ekonominin 2024–25'teki durgunluktan çıkışı, konut ve sağlık. Anketlerde seçmenler sağlık, hayat pahalılığı ve konut konularında Labour'u daha yetkin buluyor.",
-    "En kutuplaştırıcı mesele Māori hakları. ACT'nin Waitangi Antlaşması'nın ilkelerini yeniden tanımlamak isteyen yasa tasarısı büyük protestolara yol açtı ve Nisan 2025'te mecliste reddedildi. Bu seçimde seçmenleri en çok bölen soru, Māori seçmen kütüğünün ve yedi Māori seçim bölgesinin geleceği.",
-    "Sistem karma (MMP): her seçmenin iki oyu var. Bölge oyu 71 seçim bölgesinin milletvekilini belirler (2023'te 72'ydi); parti oyu ise 120 sandalyelik meclisin dağılımını belirler. Bir partinin liste sandalyesi alması için %5 parti oyu ya da en az bir bölge kazanması gerekir. Hükümet için 61 sandalye lazım.",
-    "Yarış başa baş. Son anketlerde iki büyük parti birbirine çok yakın ve küçük partiler yükselişte. Opportunity partisi %5 barajının hemen etrafında; barajı geçerse hangi bloğun hükümet kuracağını belirleyen \"kral yapıcı\" olabilir." ],
+    "## Kim iktidarda?",
+    "2023 seçiminden bu yana Başbakan Christopher Luxon'un merkez sağ National partisi, liberal-sağ ACT ve popülist NZ First ile üçlü koalisyon hükümeti yürütüyor. Koalisyon anlaşması gereği başbakan yardımcılığı Mayıs 2025'te NZ First lideri Winston Peters'tan ACT lideri David Seymour'a geçti; Peters dışişleri bakanı olarak kaldı. Ana muhalefet, eski başbakan Chris Hipkins liderliğindeki Labour. Yeşiller (eş başkanlar Marama Davidson ve Chlöe Swarbrick) ve Te Pāti Māori (eş başkanlar Debbie Ngarewa-Packer ve Rawiri Waititi) da muhalefette.",
+    "## Dönemin olayları",
+    "ACT'nin Waitangi Antlaşması'nın ilkelerini yeniden tanımlamak isteyen yasa tasarısı Kasım 2024'te ülke çapında büyük bir Māori yürüyüşüne (hīkoi) yol açtı ve Nisan 2025'te mecliste reddedildi. Hükümet düzenleme kurallarını yeniden yazan Düzenleyici Standartlar Yasası'nı ve Aralık 2025'te seçim kurallarını değiştiren bir yasayı çıkardı: seçim gününe yakın kayıt sınırlandı, mahkûmların oy hakkı kaldırıldı, bağış açıklama eşiği yükseltildi. Muhalefet her ikisine de karşı çıktı; Labour Düzenleyici Standartlar Yasası'nı ilk 100 günde kaldırma sözü verdi. Ağustos 2026'da Luxon'a karşı başarısız bir liderlik girişiminden sonra Chris Penk bakanlık görevlerini kaybetti.",
+    "## Seçmenin gündemi",
+    "Kampanyanın ana konuları hayat pahalılığı, ekonominin 2024–25'teki durgunluktan çıkışı, konut ve sağlık. Anketlerde seçmenler sağlık, hayat pahalılığı ve konut konularında Labour'u daha yetkin buluyor. Ücretsiz aile hekimi ziyaretleri ve polisin evsizleri bulundukları yerden uzaklaştırma yetkisi de tartışılan başlıklar arasında.",
+    "En kutuplaştırıcı mesele ise Māori hakları. Bu seçimde seçmenleri en çok bölen soru, Māori seçmen kütüğünün ve yedi Māori seçim bölgesinin geleceği. Labour, Te Pāti Māori'deki iç çekişmeleri gerekçe göstererek yedi Māori bölgesinin hepsinde aday çıkarıyor.",
+    "## Seçim nasıl işliyor?",
+    "Sistem karma (MMP): her seçmenin iki oyu var. Bölge oyu 71 seçim bölgesinin milletvekilini belirler (2023'te 72'ydi; nüfus değişimi yüzünden Kuzey Ada bir bölge kaybetti). Parti oyu ise 120 sandalyelik meclisin partiler arasındaki dağılımını belirler. Bir partinin liste sandalyesi alması için %5 parti oyu ya da en az bir bölge kazanması gerekir. Bir parti parti oyuyla hak ettiğinden fazla bölge kazanırsa fazla sandalye (overhang) oluşur ve meclis 120'yi geçer; 2023'te 122 sandalye olmuştu. Hükümet kurmak için meclisin salt çoğunluğu gerekir.",
+    "## Bloklar ve kral yapıcı",
+    "Labour ile Yeşiller Şubat 2026'da seçimde ve sonraki hükümette birlikte çalışacaklarını açıkladı. National ise Ağustos 2026'da Opportunity partisiyle (lideri Qiulae Wong) hiçbir şekilde çalışmayacağını duyurdu. Son anketlerde iki büyük parti çok yakın, küçük partiler yükselişte. Opportunity %5 barajının hemen etrafında; barajı geçerse sağ blok (National, ACT, NZ First) ile sol blok (Labour, Yeşiller, Te Pāti Māori) arasında hükümeti belirleyen \"kral yapıcı\" olabilir. Sonuç büyük ölçüde küçük partilerin barajı geçip geçmemesine bağlı." ],
     k: [["RNZ: anket, Opportunity baraj sınırında", "https://www.rnz.co.nz/news/politics_election-2026/2035492/new-poll-puts-election-on-knife-edge-with-opportunity-close-to-5-percent-threshold"],
         ["RNZ: seçimin 10 büyük sorusu", "https://www.rnz.co.nz/news/politics_election-2026/2095275/explainer-the-10-biggest-questions-new-zealand-has-about-the-election"],
+        ["Democracy Project haber özeti (29 Ekim)", "https://www.democracyproject.org.nz/p/news-briefing-29-october-2026"],
         ["Vikipedi: 2026 Yeni Zelanda seçimi", "https://en.wikipedia.org/wiki/2026_New_Zealand_general_election"]] },
   "knesset-2026": { guncel: "29 Ekim 2026", p: [
-    "Benjamin Netanyahu Aralık 2022'den beri Likud, aşırı sağ ve Haredi (ultra-Ortodoks) partilerle kurduğu hükümetin başında. 25. Knesset, 1988'den bu yana erken seçime gitmeden dört yıllık dönemini tamamlayan ilk meclis oldu ve 17 Temmuz 2026'da dağıldı.",
-    "Dönemin arka planında 2023'teki yargı reformu protestoları, 7 Ekim 2023 saldırısı ve ardından gelen Gazze savaşı var. Haredilerin askerlik muafiyeti koalisyonu defalarca krize soktu. Kampanyada Netanyahu İran tehdidini öne çıkardı; eski genelkurmay başkanı Gadi Eisenkot'un yeni partisi Yashar muhalefetin en büyük gücü oldu.",
-    "27 Ekim seçiminin ön sonuçlarına göre (oyların yaklaşık %90'ı sayıldığında) Likud 26 sandalyeyle en büyük parti, Yashar 21 sandalyeyle ikinci. Netanyahu bloku 53, Eisenkot'un muhalefet bloku 48 sandalyede; Arap partileri ise 17–19 sandalyeyle tarihî bir yüksekliğe çıktı. Hiçbir blok 61 sandalyelik çoğunluğa ulaşamadı. Kesin sonuçların 4 Kasım'da açıklanması bekleniyor.",
-    "Sırada Cumhurbaşkanı Isaac Herzog'un partilerle görüşüp hükümeti kurma görevini birine vermesi var. Herzog liderlere yeni bir seçimi önlemeleri çağrısında bulundu. Muhalefetin çoğunluğa ulaşması Arap partilerinin desteğine bağlı; bu da muhalefetin kendi içinde tartışmalı. Hiçbir taraf hükümet kuramazsa İsrail yeniden sandığa gidebilir." ],
+    "## Kim iktidarda?",
+    "Benjamin Netanyahu Aralık 2022'den beri Likud, aşırı sağ (Ben-Gvir'in Otzma Yehudit'i, Smotrich'in Dinî Siyonist Partisi) ve Haredi (ultra-Ortodoks: Shas ve Birleşik Tora Yahudiliği) partilerle kurduğu hükümetin başında. 25. Knesset, 1988'den bu yana erken seçime gitmeden dört yıllık dönemini tamamlayan ilk meclis oldu ve 17 Temmuz 2026'da dağıldı; seçim 27 Ekim'de yapıldı.",
+    "## Dönemin arka planı",
+    "Hükümetin 2023'teki yargı reformu girişimi ülke tarihinin en büyük protestolarına yol açtı. 7 Ekim 2023 saldırısı ve ardından gelen Gazze savaşı dönemin geri kalanını belirledi. Koalisyonu en çok sarsan mesele Haredilerin askerlik muafiyeti oldu: Haredi partisi Degel HaTorah Temmuz 2025'te bu yüzden hükümetten ayrıldı ve koalisyon defalarca dağılmanın eşiğine geldi. Kampanyada Netanyahu İran tehdidini öne çıkardı; muhalefet ise savaşın sorumluluğunu ve hükümetin yönetimini sorguladı.",
+    "## Yarışan güçler",
+    "Muhalefetin en büyük gücü eski genelkurmay başkanı Gadi Eisenkot'un yeni partisi Yashar oldu. Eski başbakan Naftali Bennett'in Together'ı, Avigdor Lieberman'ın Yisrael Beytenu'su ve Yair Golan'ın Demokratlar'ı da Netanyahu karşıtı blokta. Arap partileri (Joint List ve Mansour Abbas'ın Ra'am'ı) ayrı bir grup olarak yarıştı.",
+    "## Ön sonuçlar",
+    "Oyların yaklaşık %90'ı sayıldığında Likud 26 sandalyeyle en büyük parti, Yashar 21 sandalyeyle ikinci. Netanyahu bloku 53, Eisenkot'un muhalefet bloku 48 sandalyede; Arap partileri ise 17–19 sandalyeyle tarihî bir rekor kırdı. Katılım %77,7. Hiçbir blok 120 sandalyelik meclisin 61'lik çoğunluğuna ulaşamadı. Kesin sonuçların 4 Kasım'da açıklanması bekleniyor; askerlerin ve dış temsilciliklerin oyları gibi çift zarflı oylar sandalyeleri biraz değiştirebilir.",
+    "## Seçim sonrası tartışma",
+    "Eisenkot sonucu Netanyahu'ya karşı bir güvensizlik oyu olarak yorumladı. Netanyahu ise yenilgiyi kabul etmedi; Yahudi seçmenlerin çoğunun sağ partilere oy verdiğini söyleyerek \"güçlü, sağcı, milliyetçi\" bir hükümet kurulması gerektiğini savundu ve Arap partileriyle koalisyonu reddetti. Likud seçimin \"Arap partileri tarafından çalındığını\" iddia edip polis ve Şin Bet soruşturması istedi; Merkez Seçim Komitesi ise yaygın bir usulsüzlük kanıtı olmadığını ve sürecin temiz olduğunu açıkladı.",
+    "## Sırada ne var?",
+    "Cumhurbaşkanı Isaac Herzog partilerle görüşüp hükümeti kurma görevini en çok desteği toplayan lidere verecek; Herzog liderlere yeni bir seçimi önlemeleri çağrısında bulundu. Muhalefetin çoğunluğa ulaşması Arap partilerinin en azından dışarıdan desteğine bağlı; bu, 1990'ların Rabin hükümetinden bu yana görülmemiş bir durum olur ve muhalefetin kendi içinde de tartışmalı. Analistler bir muhalefet partisinin Netanyahu'nun yanına geçmesi ihtimalini de konuşuyor. Haftalarca sürecek bir pazarlık bekleniyor; kimse hükümet kuramazsa İsrail yeniden sandığa gidebilir." ],
     k: [["Times of Israel (%90 sayım)", "https://www.timesofisrael.com/with-85-of-votes-counted-netanyahu-bloc-has-53-seats-eisenkots-48-arab-parties-surge-to-19/"],
         ["Jerusalem Post: sonuçlar", "https://www.jpost.com/israel-election-2026/article-913122"],
+        ["Haaretz canlı yayın (28 Ekim)", "https://www.haaretz.com/israel-news/elections/2026-10-28/ty-article-live/over-70-of-votes-counted-arab-parties-at-historic-high/000001a1-81fb-d6da-a7eb-e7ff6bb30004"],
         ["Vikipedi: 2026 İsrail seçimi", "https://en.wikipedia.org/wiki/2026_Israeli_legislative_election"]] }
 };
 var simdi = Date.now();
@@ -80,21 +106,25 @@ function menu() {
   siyasi(n, dark);
   document.addEventListener("click", function (e) { n.querySelectorAll("details").forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute("open"); }); });
 }
-// Menünün sağına "Siyasi meseleler" düğmesi, sayfanın en altına ülkenin siyasi durumunu anlatan bölüm
+// Menünün hemen altına büyük "Siyasi meseleler" şeridi, sayfanın en altına ülkenin siyasi durumunu anlatan bölüm
 function siyasi(n, dark) {
   var y = SIYASI[S.id]; if (!y) return;
   var b = document.createElement("a");
-  b.href = "#siyasi-meseleler"; b.textContent = "Siyasi meseleler ↓";
-  b.setAttribute("style", "margin-left:auto;color:#141B26;background:#FBBF24;text-decoration:none;padding:6px 12px;border-radius:99px;font-weight:700");
+  b.href = "#siyasi-meseleler";
+  b.innerHTML = '<span style="font-size:24px;line-height:1">🏛️</span><span><span style="display:block;font-size:20px;font-weight:800">Siyasi meseleler</span>' +
+    '<span style="display:block;font-size:14px;font-weight:600;opacity:.8">Seçime nasıl gelindi? Ülkenin güncel siyasi durumunu okuyun</span></span>' +
+    '<span style="margin-left:auto;font-size:22px;font-weight:800">↓</span>';
+  b.setAttribute("style", "display:flex;align-items:center;gap:14px;box-sizing:border-box;width:calc(100% - 32px);max-width:1148px;margin:12px auto 0;padding:14px 20px;" +
+    "background:#FBBF24;color:#141B26;text-decoration:none;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif");
   b.onclick = function (e) { e.preventDefault(); document.getElementById("siyasi-meseleler").scrollIntoView({ behavior: "smooth", block: "start" }); };
-  n.appendChild(b);
+  n.parentNode.insertBefore(b, n.nextSibling);
   var s = document.createElement("section"); s.id = "siyasi-meseleler";
   var ink = dark ? "#E6EBF2" : "#141B26", mut = dark ? "#98A3B3" : "#5B6675", card = dark ? "#161D28" : "#fff", line = dark ? "#2A3444" : "#DDE2EA";
   s.setAttribute("style", "max-width:1148px;margin:24px auto 32px;padding:20px 22px;background:" + card + ";color:" + ink + ";border:1px solid " + line +
     ";border-radius:12px;font:16px/1.65 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-sizing:border-box;width:calc(100% - 32px)");
   s.innerHTML = '<h2 style="font-size:20px;margin:0 0 4px">Siyasi meseleler: ' + S.ad + '</h2>' +
     '<div style="font-size:13px;color:' + mut + ';margin-bottom:12px">Ülkenin güncel siyasi durumu · ' + y.guncel + ' itibarıyla</div>' +
-    y.p.map(function (t) { return '<p style="margin:0 0 12px">' + t + '</p>'; }).join("") +
+    y.p.map(function (t) { return t.indexOf("## ") === 0 ? '<h3 style="font-size:17px;margin:18px 0 6px">' + t.slice(3) + '</h3>' : '<p style="margin:0 0 12px">' + t + '</p>'; }).join("") +
     '<div style="font-size:13px;color:' + mut + '">Kaynaklar: ' + y.k.map(function (x) { return '<a href="' + x[1] + '" target="_blank" rel="noopener" style="color:' + (dark ? "#7AA7F0" : "#1F5FBF") + '">' + x[0] + '</a>'; }).join(" · ") +
     ' · <a href="#" onclick="scrollTo({top:0,behavior:\'smooth\'});return false" style="color:' + mut + '">↑ başa dön</a></div>';
   document.body.appendChild(s);
