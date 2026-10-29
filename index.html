@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ulmocus Seçim</title>
-<meta name="description" content="Ulmocus Seçim: Türkçe canlı seçim sonuçları. Aktif: ABD 3 Kasım 2026 ara seçimleri, Yeni Zelanda 7 Kasım 2026 genel seçimi. Geçmiş: İsrail 26. Knesset seçimi.">
+<meta name="description" content="Ulmocus Seçim: Türkçe canlı seçim sonuçları. ABD 3 Kasım 2026 ara seçimleri, Yeni Zelanda 7 Kasım 2026 genel seçimi. Geçmiş: İsrail 26. Knesset seçimi.">
 <style>body{margin:0;font:15px system-ui,sans-serif;background:#EEF1F5;color:#141B26;display:grid;place-items:center;min-height:100vh}@media(prefers-color-scheme:dark){body{background:#0E131B;color:#E6EBF2}}</style>
 </head>
 <body>
@@ -12,30 +12,40 @@
 <script>
 (function () {
 // Ulmocus Seçim yükleyicisi: seçilen seçimin sayfasını raw.githubusercontent.com'dan yükler (Pages yayınına bağlı değil)
-// ve üste "Aktif seçimler / Geçmiş seçimler" menüsünü ekler. Adres: ?secim=<kimlik>; varsayılan ilk aktif seçim.
+// ve üste "Aktif / Gelecek / Geçmiş seçimler" menüsünü ekler. Adres: ?secim=<kimlik>.
+// Durum tarihten hesaplanır: sayim (ilk sandıkların kapanışı) öncesi "gelecek", sayim–bitis arası "aktif" (sayım sürüyor), sonrası "gecmis".
+// Varsayılan: ilk aktif seçim; yoksa en yakın gelecek seçim; yoksa en son geçmiş seçim.
 var SECIMLER = [
-  { id: "abd-2026", ad: "ABD 2026 ara seçimleri", tarih: "3 Kasım 2026", durum: "aktif", repo: "ulmocus-secim/abd-2026" },
-  { id: "yeni-zelanda-2026", ad: "Yeni Zelanda genel seçimi", tarih: "7 Kasım 2026", durum: "aktif", repo: "ulmocus-secim/yeni-zelanda-2026" },
-  { id: "knesset-2026", ad: "İsrail 26. Knesset seçimi", tarih: "27 Ekim 2026", durum: "gecmis",
+  { id: "abd-2026", ad: "ABD 2026 ara seçimleri", tarih: "3 Kasım 2026", sayim: "2026-11-04T02:00:00+03:00", bitis: "2026-11-06T12:00:00+03:00", repo: "ulmocus-secim/abd-2026" },
+  { id: "yeni-zelanda-2026", ad: "Yeni Zelanda genel seçimi", tarih: "7 Kasım 2026", sayim: "2026-11-07T09:00:00+03:00", bitis: "2026-11-08T12:00:00+03:00", repo: "ulmocus-secim/yeni-zelanda-2026" },
+  { id: "knesset-2026", ad: "İsrail 26. Knesset seçimi", tarih: "27 Ekim 2026", sayim: "2026-10-27T22:00:00+03:00", bitis: "2026-10-29T00:00:00+03:00",
     src: "https://raw.githubusercontent.com/erdemnope-hash/ulmocus-secim/main/index.html", yedek: "https://erdemnope-hash.github.io/ulmocus-secim/" }
 ];
+var simdi = Date.now();
+SECIMLER.forEach(function (s) { s.durum = simdi < Date.parse(s.sayim) ? "gelecek" : simdi < Date.parse(s.bitis) ? "aktif" : "gecmis"; });
+function sec(durum, yon) { return SECIMLER.filter(function (s) { return s.durum === durum; }).sort(function (a, b) { return yon * (Date.parse(a.sayim) - Date.parse(b.sayim)); })[0]; }
 var q = (location.search.match(/[?&]secim=([\w-]+)/) || [])[1];
-var S = SECIMLER.filter(function (s) { return s.id === q; })[0] || SECIMLER.filter(function (s) { return s.durum === "aktif"; })[0] || SECIMLER[0];
+var S = SECIMLER.filter(function (s) { return s.id === q; })[0] || sec("aktif", 1) || sec("gelecek", 1) || sec("gecmis", -1);
 function link(s) { return "?secim=" + s.id; }
+function saat(iso) { try { return new Date(iso).toLocaleString("tr-TR", { timeZone: "Europe/Istanbul", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + " TSİ"; } catch (e) { return iso; } }
+function alt(s) { return s.durum === "gelecek" ? "sayım " + saat(s.sayim) + "'de başlar" : s.durum === "aktif" ? "sayım sürüyor" : "sonuçlandı"; }
 function menu() {
   var dark = matchMedia("(prefers-color-scheme: dark)").matches, bg = dark ? "#0B1017" : "#141B26";
   var grp = function (baslik, durum) {
-    var l = SECIMLER.filter(function (s) { return s.durum === durum; });
+    var l = SECIMLER.filter(function (s) { return s.durum === durum; })
+      .sort(function (a, b) { return (durum === "gecmis" ? -1 : 1) * (Date.parse(a.sayim) - Date.parse(b.sayim)); });
     return '<details style="position:relative"><summary style="cursor:pointer;list-style:none;padding:6px 12px;border-radius:99px;border:1px solid #3A4555;' +
       (l.some(function (s) { return s.id === S.id; }) ? 'background:#E6EBF2;color:#141B26;' : '') + '">' + baslik + ' ▾</summary>' +
       '<div style="position:absolute;top:110%;left:0;z-index:50;background:' + bg + ';border:1px solid #3A4555;border-radius:10px;padding:6px;min-width:250px;box-shadow:0 8px 24px rgba(0,0,0,.3)">' +
       (l.length ? l.map(function (s) { return '<a href="' + link(s) + '" style="display:block;color:#E6EBF2;text-decoration:none;padding:8px 10px;border-radius:6px' +
-        (s.id === S.id ? ';background:#2A3444' : '') + '"><b>' + s.ad + '</b><br><span style="font-size:12px;color:#98A3B3">' + s.tarih + '</span></a>'; }).join("")
+        (s.id === S.id ? ';background:#2A3444' : '') + '"><b>' + s.ad + '</b><br><span style="font-size:12px;color:#98A3B3">' + s.tarih + ' · ' + alt(s) + '</span></a>'; }).join("")
         : '<div style="padding:8px 10px;color:#98A3B3">Şu an yok</div>') + '</div></details>';
   };
   var n = document.createElement("nav");
   n.setAttribute("style", "position:relative;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 16px;background:" + bg + ";color:#E6EBF2;font:600 14px system-ui,sans-serif");
-  n.innerHTML = '<a href="./" style="color:#E6EBF2;text-decoration:none;margin-right:6px">Ulmocus Seçim</a>' + grp("Aktif seçimler", "aktif") + grp("Geçmiş seçimler", "gecmis");
+  var canli = SECIMLER.some(function (s) { return s.durum === "aktif"; }) ? '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ADE80;margin-right:6px"></span>' : '';
+  n.innerHTML = '<a href="./" style="color:#E6EBF2;text-decoration:none;margin-right:6px">Ulmocus Seçim</a>' +
+    grp(canli + "Aktif seçimler", "aktif") + grp("Gelecek seçimler", "gelecek") + grp("Geçmiş seçimler", "gecmis");
   document.body.insertBefore(n, document.body.firstChild);
   document.addEventListener("click", function (e) { n.querySelectorAll("details").forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute("open"); }); });
 }
