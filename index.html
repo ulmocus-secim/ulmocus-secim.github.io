@@ -106,18 +106,16 @@ function menu() {
   siyasi(n, dark);
   document.addEventListener("click", function (e) { n.querySelectorAll("details").forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute("open"); }); });
 }
-// Menünün hemen altına büyük "Siyasi meseleler" şeridi, sayfanın en altına ülkenin siyasi durumunu anlatan bölüm
+// Menünün en soluna "Siyasi meseleler" düğmesi, sayfanın en altına ülkenin siyasi durumunu anlatan bölüm
 function siyasi(n, dark) {
   var y = SIYASI[S.id]; if (!y) return;
   var b = document.createElement("a");
   b.href = "#siyasi-meseleler";
-  b.innerHTML = '<span style="font-size:24px;line-height:1">🏛️</span><span><span style="display:block;font-size:20px;font-weight:800">Siyasi meseleler</span>' +
-    '<span style="display:block;font-size:14px;font-weight:600;opacity:.8">Seçime nasıl gelindi? Ülkenin güncel siyasi durumunu okuyun</span></span>' +
-    '<span style="margin-left:auto;font-size:22px;font-weight:800">↓</span>';
-  b.setAttribute("style", "display:flex;align-items:center;gap:14px;box-sizing:border-box;width:calc(100% - 32px);max-width:1148px;margin:12px auto 0;padding:14px 20px;" +
-    "background:#FBBF24;color:#141B26;text-decoration:none;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif");
+  b.textContent = "🏛️ Siyasi meseleler ↓";
+  b.setAttribute("style", "order:-1;background:#FBBF24;color:#141B26;text-decoration:none;padding:7px 14px;border-radius:99px;font-weight:800;font-size:15px;" +
+    "box-shadow:0 2px 8px rgba(0,0,0,.25);margin-right:6px");
   b.onclick = function (e) { e.preventDefault(); document.getElementById("siyasi-meseleler").scrollIntoView({ behavior: "smooth", block: "start" }); };
-  n.parentNode.insertBefore(b, n.nextSibling);
+  n.insertBefore(b, n.firstChild);
   var s = document.createElement("section"); s.id = "siyasi-meseleler";
   var ink = dark ? "#E6EBF2" : "#141B26", mut = dark ? "#98A3B3" : "#5B6675", card = dark ? "#161D28" : "#fff", line = dark ? "#2A3444" : "#DDE2EA";
   s.setAttribute("style", "max-width:1148px;margin:24px auto 32px;padding:20px 22px;background:" + card + ";color:" + ink + ";border:1px solid " + line +
