@@ -150,13 +150,13 @@ function siyasi(n, dark) {
   document.body.appendChild(s);
   yer();
 }
-// İçeriğin arkasında (z-index:-1), ekranın sol ve sağ kenarında sabit, yarı saydam portreler; yalnızca kenarlarda yeterli boşluk varsa görünür
+// İçeriğin arkasında (z-index:-1), sayfanın sol ve sağ kenarında, sayfayla birlikte kayan yarı saydam portreler; yalnızca kenarlarda yeterli boşluk varsa görünür
 function liderler(dark) {
   var l = LIDER[S.id]; if (!l) return;
   var ink = dark ? "#E6EBF2" : "#141B26";
   var kutu = l.map(function (x, i) {
     var d = document.createElement("div"), yan = i ? "right" : "left";
-    d.setAttribute("style", "position:fixed;bottom:0;" + yan + ":0;z-index:-1;pointer-events:none;display:flex;flex-direction:column;align-items:" + (i ? "flex-end" : "flex-start"));
+    d.setAttribute("style", "position:absolute;top:60px;" + yan + ":0;z-index:-1;pointer-events:none;display:flex;flex-direction:column;align-items:" + (i ? "flex-end" : "flex-start"));
     d.innerHTML = '<img src="' + x.img + '" alt="' + x.ad + '" referrerpolicy="no-referrer" style="display:block;height:min(78vh,820px);width:auto;opacity:.32;' +
       '-webkit-mask-image:linear-gradient(to ' + (i ? "left" : "right") + ',#000 55%,transparent),linear-gradient(to top,transparent,#000 22%);-webkit-mask-composite:source-in;' +
       'mask-image:linear-gradient(to ' + (i ? "left" : "right") + ',#000 55%,transparent),linear-gradient(to top,transparent,#000 22%);mask-composite:intersect">' +
@@ -166,7 +166,8 @@ function liderler(dark) {
   });
   var boy = function () {   // içerik ~1180 px; kenar boşluğu dar ekranda portreler gizlenir
     var bos = (innerWidth - 1180) / 2;
-    kutu.forEach(function (d) { d.style.display = bos >= 110 ? "flex" : "none"; d.firstChild.style.maxWidth = Math.round(bos + 160) + "px"; d.firstChild.style.objectFit = "cover"; d.firstChild.style.objectPosition = "top"; });
+    var ust = (document.querySelector("nav") || { getBoundingClientRect: function () { return { bottom: 0 }; } }).getBoundingClientRect().bottom + scrollY;
+    kutu.forEach(function (d) { d.style.top = ust + "px"; d.style.display = bos >= 110 ? "flex" : "none"; d.firstChild.style.maxWidth = Math.round(bos + 160) + "px"; d.firstChild.style.objectFit = "cover"; d.firstChild.style.objectPosition = "top"; });
   };
   boy(); addEventListener("resize", boy);
   var s = document.getElementById("siyasi-meseleler");   // fotoğraf lisansları
