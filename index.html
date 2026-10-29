@@ -103,17 +103,17 @@ var LIDER = {
 };
 // Portrelerin altında: liderin temel ideolojik çizgisi ve seçim vaatleri (kaynaklar "Siyasi meseleler" bölümünde)
 var GORUS = {
-  "Donald Trump": { s: ["Amerika'nın altın çağı şimdi başlıyor.", "The golden age of America begins right now.", "İkinci yemin töreni konuşması, 20 Ocak 2025"], i: "Sağ popülist, milliyetçi muhafazakâr: \"Önce Amerika\".",
+  "Donald Trump": { video: ["AgHT4Ky9Ct8",0,"İkinci yemin töreni: \"Amerika'nın altın çağı şimdi başlıyor\", 20 Ocak 2025 (VOA)"], i: "Sağ popülist, milliyetçi muhafazakâr: \"Önce Amerika\".",
     v: ["Yüksek gümrük vergileriyle ticarette korumacılık", "Sıkı göç politikası, toplu sınır dışı etmeler", "Vergi indirimlerinin sürmesi (bahşiş ve fazla mesaiye vergi yok)", "Daha az düzenleme, fosil yakıt üretimine destek", "Federal bürokrasinin küçültülmesi"] },
-  "Hakeem Jeffries": { s: ["Amerikan değerleri otokrasiden, iyilik bağnazlıktan önce gelir.", "American values over autocracy, benevolence over bigotry.", "Meclis'te \"alfabe\" konuşması, 7 Ocak 2023"], i: "Merkez sol, Demokrat ana akım; başkanı denetleyen bir Kongre.",
+  "Hakeem Jeffries": { video: ["0AxDQK6yGBI",750,"Meclis'teki \"alfabe\" konuşması, 7 Ocak 2023 (Jeffries'in resmî kanalı)"], i: "Merkez sol, Demokrat ana akım; başkanı denetleyen bir Kongre.",
     v: ["Market ve benzin fiyatlarını düşürmek", "Süresi dolan Obamacare sağlık sigortası desteklerini geri getirmek", "Bütçe yasasındaki Medicaid kesintilerini ve çalışma şartını geri almak", "Yolsuzluğa karşı soruşturma ve hesap sorma", "Hepsini yeni Kongre'nin ilk 100 saatinde başlatmak"] },
-  "Christopher Luxon": { s: ["Umuda uzandınız ve değişim için oy verdiniz.", "You have reached for hope and you have voted for change.", "Seçim zaferi konuşması, 14 Ekim 2023"], i: "Merkez sağ: ekonomik büyüme, mali disiplin, sert suç politikası.",
+  "Christopher Luxon": { video: ["fYWiIbzU7Go",0,"Seçim zaferi konuşması, 14 Ekim 2023 (Newshub)"], i: "Merkez sağ: ekonomik büyüme, mali disiplin, sert suç politikası.",
     v: ["Yeni vergi yok", "Yeni iş ve daha yüksek maaş getiren büyüme", "Bütçe fazlası", "Suçlulara daha ağır yaptırım", "Daha hızlı sağlık hizmeti ve daha çok ilaç", "Zorunlu KiwiSaver emeklilik birikimi, doğum izninin 30 haftaya çıkması"] },
-  "Chris Hipkins": { s: ["Odağımız şimdi olacak; insanların önemsediği ekmek ve geçim meselelerinde.", "Our focus will be on the right now, on the bread and butter issues that people care about.", "Başbakan seçildiği gün, 22 Ocak 2023"], i: "Merkez sol, sosyal demokrat: kamu hizmetleri ve hayat pahalılığı.",
+  "Chris Hipkins": { video: ["RBPm_6ev2U0",0,"Başbakan olarak ulusa ilk seslenişi, Ocak 2023 (RNZ)"], i: "Merkez sol, sosyal demokrat: kamu hizmetleri ve hayat pahalılığı.",
     v: ["Konut ve ticari mülk satış kazancına %28 vergi (aile evi ve çiftlikler hariç)", "Herkese yılda 3 ücretsiz aile hekimi ziyareti", "Öğrenci kredisi borcunun %10'unun silinmesi", "Toplu taşımada haftalık ücret tavanı", "Düzenleyici Standartlar Yasası'nın ilk 100 günde kaldırılması"] },
-  "Benjamin Netanyahu": { s: ["İsrail vatandaşları, savaştayız. Operasyon değil, bir tur değil; savaştayız.", "Citizens of Israel, we are at war. Not an operation, not a round, at war.", "7 Ekim 2023 saldırısından sonraki ulusa sesleniş"], i: "Sağ milliyetçi, güvenlik öncelikli; Likud lideri.",
+  "Benjamin Netanyahu": { video: ["GAm2RAbAc-Y",0,"\"Savaştayız\" açıklaması, 7 Ekim 2023 (Guardian News)"], i: "Sağ milliyetçi, güvenlik öncelikli; Likud lideri.",
     v: ["İran tehdidine karşı sert çizgi", "Filistin devletine karşı", "\"Güçlü, sağcı, milliyetçi\" bir hükümet", "Arap partileriyle koalisyona hayır"] },
-  "Gadi Eisenkot": { s: ["Mutlak yenilgiden söz eden, doğruyu söylemiyor.", "Whoever speaks of absolute defeat is not speaking the truth.", "Hamas'a karşı savaş üzerine, Kanal 12 Uvda, Ocak 2024"], i: "Merkez, güvenlik odaklı; eski genelkurmay başkanı.",
+  "Gadi Eisenkot": { video: ["tYjQQUCdJqQ",0,"Seçim gecesi konuşması, 27 Ekim 2026 (Al Jazeera)"], i: "Merkez, güvenlik odaklı; eski genelkurmay başkanı.",
     v: ["Gazze'de Hamas yönetiminin sona erdirilmesi, Hizbullah'ın sınırlandırılması", "Daha güçlü ordu ve uzun vadeli ulusal güvenlik doktrini", "Askerlik ve çalışmada eşit yük (Haredi muafiyetine karşı)", "Şimdilik Filistin devleti gündemde değil; Yahudi çoğunluğu koruyan pragmatik çizgi"] }
 };
 var simdi = Date.now();
@@ -192,16 +192,19 @@ function liderler(dark) {
       'mask-image:linear-gradient(to ' + (i ? "left" : "right") + ',#000 55%,transparent),linear-gradient(to top,transparent,#000 22%);mask-composite:intersect">' +
       '<div style="position:absolute;bottom:18px;' + yan + ':18px;text-align:' + yan + ';color:' + ink + ';opacity:.7;font:600 14px/1.3 system-ui,sans-serif">' +
       '<div style="font-size:17px;font-weight:800">' + x.ad + '</div>' + x.rol + '</div></div>';
+    // Görüş, vaatler ve video portrenin altında ayrı bir katmanda (z-index:2) durur ki video tıklanabilsin
     var g = GORUS[x.ad];
-    if (g) d.insertAdjacentHTML("beforeend", '<div class="gorus" style="box-sizing:border-box;padding:14px 18px 0;color:' + ink + ';opacity:.88;font:14px/1.5 system-ui,sans-serif;text-align:left">' +
+    if (g) d.bilgi = document.body.appendChild(Object.assign(document.createElement("div"), { className: "lider" }));
+    if (g) d.bilgi.setAttribute("style", "position:absolute;" + yan + ":0;z-index:2");
+    if (g) d.bilgi.insertAdjacentHTML("beforeend", '<div class="gorus" style="box-sizing:border-box;padding:0 18px;color:' + ink + ';opacity:.92;font:14px/1.5 system-ui,sans-serif;text-align:left">' +
       '<div style="font-size:12px;font-weight:700;letter-spacing:.06em;color:' + (dark ? "#98A3B3" : "#5B6675") + '">TEMEL GÖRÜŞ</div><div style="margin:2px 0 10px">' + g.i + '</div>' +
       '<div style="font-size:12px;font-weight:700;letter-spacing:.06em;color:' + (dark ? "#98A3B3" : "#5B6675") + '">VAATLER</div><ul style="margin:4px 0 0;padding-left:18px">' +
       g.v.map(function (t) { return '<li style="margin:3px 0">' + t + '</li>'; }).join("") + '</ul>' +
-      (g.s ? '<div style="font-size:12px;font-weight:700;letter-spacing:.06em;margin-top:12px;color:' + (dark ? "#98A3B3" : "#5B6675") + '">ÜNLÜ SÖZÜ</div>' +
-        '<blockquote style="margin:6px 0 0;padding:4px 0 4px 12px;border-left:3px solid #FBBF24">' +
-        '<div style="font-size:16px;font-style:italic;font-weight:600">“' + g.s[0] + '”</div>' +
-        '<div style="font-size:12px;opacity:.75;margin-top:4px">“' + g.s[1] + '”</div>' +
-        '<div style="font-size:12px;opacity:.75;margin-top:4px">— ' + x.ad + ', ' + g.s[2] + '</div></blockquote>' : '') + '</div>');
+      (g.video ? '<div style="font-size:12px;font-weight:700;letter-spacing:.06em;margin-top:12px;color:' + (dark ? "#98A3B3" : "#5B6675") + '">ÜNLÜ KONUŞMASI</div>' +
+        '<div style="position:relative;width:100%;aspect-ratio:16/9;margin-top:6px;border-radius:10px;overflow:hidden;background:#000;box-shadow:0 2px 10px rgba(0,0,0,.3)">' +
+        '<iframe src="https://www.youtube-nocookie.com/embed/' + g.video[0] + '?rel=0' + (g.video[1] ? '&start=' + g.video[1] : '') + '" title="' + x.ad + ' konuşması" loading="lazy" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>' +
+        '<div style="font-size:12px;opacity:.75;margin-top:5px">' + g.video[2] + '</div>' : '') + '</div>');
     document.body.appendChild(d); return d;
   });
   var boy = function () {   // içerik ~1180 px; kenar boşluğu dar ekranda portreler gizlenir
@@ -215,8 +218,11 @@ function liderler(dark) {
     var bos = sag > sol ? Math.min(sol, document.documentElement.clientWidth - sag) - 8 : (innerWidth - 1180) / 2;
     var ust = (document.querySelector("nav") || { getBoundingClientRect: function () { return { bottom: 0 }; } }).getBoundingClientRect().bottom + scrollY;
     kutu.forEach(function (d) { d.style.top = ust + "px";
-      var gb = d.querySelector(".gorus"); if (gb) { gb.style.width = Math.round(bos - 8) + "px"; gb.style.display = bos >= 200 ? "" : "none"; } d.style.display = bos >= 110 ? "flex" : "none"; var im = d.querySelector("img"); im.style.maxWidth = Math.round(bos + 160) + "px"; im.style.objectFit = "cover"; im.style.objectPosition = "top"; });
+      d.style.display = bos >= 110 ? "flex" : "none"; var im = d.querySelector("img"); im.style.maxWidth = Math.round(bos + 160) + "px"; im.style.objectFit = "cover"; im.style.objectPosition = "top";
+      if (d.bilgi) { var gb = d.bilgi.firstChild; gb.style.width = Math.round(bos - 8) + "px"; d.bilgi.style.display = bos >= 200 ? "" : "none";
+        d.bilgi.style.top = Math.round(ust + (im.offsetHeight || innerHeight * .78) + 14) + "px"; } });
   };
+  kutu.forEach(function (d) { d.querySelector("img").addEventListener("load", boy); });   // video bloğu portre yüksekliğine göre yerleşir
   boy(); addEventListener("resize", boy); setTimeout(boy, 1500); setTimeout(boy, 5000);   // sayfa içeriği geç çizilebilir
   var s = document.getElementById("siyasi-meseleler");   // fotoğraf lisansları
   if (s) s.lastChild.insertAdjacentHTML("beforeend", '<div style="margin-top:6px">Fotoğraflar (Wikimedia Commons): ' + l.map(function (x) { return x.ad + ": " + x.kredi; }).join(" · ") + '</div>');
