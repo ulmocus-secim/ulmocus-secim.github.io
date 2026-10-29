@@ -42,6 +42,8 @@ var SIYASI = {
         ["PBS son anket", "https://www.pbs.org/newshour/politics/poll-likely-voters-favor-democrats-as-trump-disapproval-drives-early-turnout"],
         ["The Conversation (26 Ekim 2026)", "https://theconversation.com/democrats-remain-clear-favourites-to-gain-control-of-congress-at-midterms-as-trumps-ratings-slide-again-295134"],
         ["AP: Demokratların ilk 100 gün planı", "https://clickondetroit.com/news/politics/2026/10/14/house-democrats-plan-a-first-100-days-agenda-if-they-sweep-to-power-in-midterm-elections"],
+        ["Trump yemin konuşması metni (Fortune)", "https://fortune.com/2025/01/20/president-donald-trump-inauguration-speech-address-full-text"],
+        ["Jeffries konuşma metni (Demokrat lider ofisi)", "https://democraticleader.house.gov/media/press-releases/transcript-leader-jeffries-speech-upon-election-speaker-house"],
         ["Vikipedi: 2026 Senato seçimleri","https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"],
         ["Vikipedi: 2026 ABD seçimleri", "https://en.wikipedia.org/wiki/2026_United_States_elections"]] },
   "yeni-zelanda-2026": { guncel: "29 Ekim 2026", p: [
@@ -60,6 +62,8 @@ var SIYASI = {
         ["RNZ: seçimin 10 büyük sorusu", "https://www.rnz.co.nz/news/politics_election-2026/2095275/explainer-the-10-biggest-questions-new-zealand-has-about-the-election"],
         ["NZ Herald: National'ın 10 vaadi", "https://www.nzherald.co.nz/nz/politics/election-2026-national-to-launch-campaign-with-speeches-from-john-key-christopher-luxon/QVP6QMNLZVA6NITNEQFXSGRFRU/"],
         ["Yahoo/AAP: 2026 seçim rehberi (Labour vaatleri)", "https://au.news.yahoo.com/guide-2026-zealand-election-051452143.html"],
+        ["NPR: Luxon zafer konuşması", "https://www.npr.org/2023/10/14/1205953096"],
+        ["Newsroom: Hipkins ilk konuşması", "https://www.newsroom.co.nz/chris-hipkins-want-to-make-politics-boring-again"],
         ["Democracy Project haber özeti (29 Ekim)","https://www.democracyproject.org.nz/p/news-briefing-29-october-2026"],
         ["Vikipedi: 2026 Yeni Zelanda seçimi", "https://en.wikipedia.org/wiki/2026_New_Zealand_general_election"]] },
   "knesset-2026": { guncel: "29 Ekim 2026", p: [
@@ -78,6 +82,8 @@ var SIYASI = {
     k: [["Times of Israel (%90 sayım)", "https://www.timesofisrael.com/with-85-of-votes-counted-netanyahu-bloc-has-53-seats-eisenkots-48-arab-parties-surge-to-19/"],
         ["Jerusalem Post: sonuçlar", "https://www.jpost.com/israel-election-2026/article-913122"],
         ["Jerusalem Post: Yashar neyi savunuyor?", "https://www.jpost.com/israel-election-2026/article-911464"],
+        ["Times of Israel: Netanyahu, 7 Ekim 2023", "https://www.timesofisrael.com/we-are-at-war-netanyahu-says-after-hamas-launches-devastating-surprise-attack/"],
+        ["Times of Israel: Eisenkot, Uvda röportajı", "https://www.timesofisrael.com/liveblog-january-18-2024"],
         ["Haaretz canlı yayın (28 Ekim)","https://www.haaretz.com/israel-news/elections/2026-10-28/ty-article-live/over-70-of-votes-counted-arab-parties-at-historic-high/000001a1-81fb-d6da-a7eb-e7ff6bb30004"],
         ["Vikipedi: 2026 İsrail seçimi", "https://en.wikipedia.org/wiki/2026_Israeli_legislative_election"]] }
 };
@@ -97,17 +103,17 @@ var LIDER = {
 };
 // Portrelerin altında: liderin temel ideolojik çizgisi ve seçim vaatleri (kaynaklar "Siyasi meseleler" bölümünde)
 var GORUS = {
-  "Donald Trump": { i: "Sağ popülist, milliyetçi muhafazakâr: \"Önce Amerika\".",
+  "Donald Trump": { s: ["Amerika'nın altın çağı şimdi başlıyor.", "The golden age of America begins right now.", "İkinci yemin töreni konuşması, 20 Ocak 2025"], i: "Sağ popülist, milliyetçi muhafazakâr: \"Önce Amerika\".",
     v: ["Yüksek gümrük vergileriyle ticarette korumacılık", "Sıkı göç politikası, toplu sınır dışı etmeler", "Vergi indirimlerinin sürmesi (bahşiş ve fazla mesaiye vergi yok)", "Daha az düzenleme, fosil yakıt üretimine destek", "Federal bürokrasinin küçültülmesi"] },
-  "Hakeem Jeffries": { i: "Merkez sol, Demokrat ana akım; başkanı denetleyen bir Kongre.",
+  "Hakeem Jeffries": { s: ["Amerikan değerleri otokrasiden, iyilik bağnazlıktan önce gelir.", "American values over autocracy, benevolence over bigotry.", "Meclis'te \"alfabe\" konuşması, 7 Ocak 2023"], i: "Merkez sol, Demokrat ana akım; başkanı denetleyen bir Kongre.",
     v: ["Market ve benzin fiyatlarını düşürmek", "Süresi dolan Obamacare sağlık sigortası desteklerini geri getirmek", "Bütçe yasasındaki Medicaid kesintilerini ve çalışma şartını geri almak", "Yolsuzluğa karşı soruşturma ve hesap sorma", "Hepsini yeni Kongre'nin ilk 100 saatinde başlatmak"] },
-  "Christopher Luxon": { i: "Merkez sağ: ekonomik büyüme, mali disiplin, sert suç politikası.",
+  "Christopher Luxon": { s: ["Umuda uzandınız ve değişim için oy verdiniz.", "You have reached for hope and you have voted for change.", "Seçim zaferi konuşması, 14 Ekim 2023"], i: "Merkez sağ: ekonomik büyüme, mali disiplin, sert suç politikası.",
     v: ["Yeni vergi yok", "Yeni iş ve daha yüksek maaş getiren büyüme", "Bütçe fazlası", "Suçlulara daha ağır yaptırım", "Daha hızlı sağlık hizmeti ve daha çok ilaç", "Zorunlu KiwiSaver emeklilik birikimi, doğum izninin 30 haftaya çıkması"] },
-  "Chris Hipkins": { i: "Merkez sol, sosyal demokrat: kamu hizmetleri ve hayat pahalılığı.",
+  "Chris Hipkins": { s: ["Odağımız şimdi olacak; insanların önemsediği ekmek ve geçim meselelerinde.", "Our focus will be on the right now, on the bread and butter issues that people care about.", "Başbakan seçildiği gün, 22 Ocak 2023"], i: "Merkez sol, sosyal demokrat: kamu hizmetleri ve hayat pahalılığı.",
     v: ["Konut ve ticari mülk satış kazancına %28 vergi (aile evi ve çiftlikler hariç)", "Herkese yılda 3 ücretsiz aile hekimi ziyareti", "Öğrenci kredisi borcunun %10'unun silinmesi", "Toplu taşımada haftalık ücret tavanı", "Düzenleyici Standartlar Yasası'nın ilk 100 günde kaldırılması"] },
-  "Benjamin Netanyahu": { i: "Sağ milliyetçi, güvenlik öncelikli; Likud lideri.",
+  "Benjamin Netanyahu": { s: ["İsrail vatandaşları, savaştayız. Operasyon değil, bir tur değil; savaştayız.", "Citizens of Israel, we are at war. Not an operation, not a round, at war.", "7 Ekim 2023 saldırısından sonraki ulusa sesleniş"], i: "Sağ milliyetçi, güvenlik öncelikli; Likud lideri.",
     v: ["İran tehdidine karşı sert çizgi", "Filistin devletine karşı", "\"Güçlü, sağcı, milliyetçi\" bir hükümet", "Arap partileriyle koalisyona hayır"] },
-  "Gadi Eisenkot": { i: "Merkez, güvenlik odaklı; eski genelkurmay başkanı.",
+  "Gadi Eisenkot": { s: ["Mutlak yenilgiden söz eden, doğruyu söylemiyor.", "Whoever speaks of absolute defeat is not speaking the truth.", "Hamas'a karşı savaş üzerine, Kanal 12 Uvda, Ocak 2024"], i: "Merkez, güvenlik odaklı; eski genelkurmay başkanı.",
     v: ["Gazze'de Hamas yönetiminin sona erdirilmesi, Hizbullah'ın sınırlandırılması", "Daha güçlü ordu ve uzun vadeli ulusal güvenlik doktrini", "Askerlik ve çalışmada eşit yük (Haredi muafiyetine karşı)", "Şimdilik Filistin devleti gündemde değil; Yahudi çoğunluğu koruyan pragmatik çizgi"] }
 };
 var simdi = Date.now();
@@ -179,7 +185,7 @@ function liderler(dark) {
   var l = LIDER[S.id]; if (!l) return;
   var ink = dark ? "#E6EBF2" : "#141B26";
   var kutu = l.map(function (x, i) {
-    var d = document.createElement("div"), yan = i ? "right" : "left";
+    var d = document.createElement("div"), yan = i ? "right" : "left"; d.className = "lider";
     d.setAttribute("style", "position:absolute;top:60px;" + yan + ":0;z-index:-1;pointer-events:none;display:flex;flex-direction:column;align-items:" + (i ? "flex-end" : "flex-start"));
     d.innerHTML = '<div style="position:relative"><img src="' + x.img + '" alt="' + x.ad + '" referrerpolicy="no-referrer" style="display:block;height:min(78vh,820px);width:auto;opacity:.32;' +
       '-webkit-mask-image:linear-gradient(to ' + (i ? "left" : "right") + ',#000 55%,transparent),linear-gradient(to top,transparent,#000 22%);-webkit-mask-composite:source-in;' +
@@ -190,16 +196,28 @@ function liderler(dark) {
     if (g) d.insertAdjacentHTML("beforeend", '<div class="gorus" style="box-sizing:border-box;padding:14px 18px 0;color:' + ink + ';opacity:.88;font:14px/1.5 system-ui,sans-serif;text-align:left">' +
       '<div style="font-size:12px;font-weight:700;letter-spacing:.06em;color:' + (dark ? "#98A3B3" : "#5B6675") + '">TEMEL GÖRÜŞ</div><div style="margin:2px 0 10px">' + g.i + '</div>' +
       '<div style="font-size:12px;font-weight:700;letter-spacing:.06em;color:' + (dark ? "#98A3B3" : "#5B6675") + '">VAATLER</div><ul style="margin:4px 0 0;padding-left:18px">' +
-      g.v.map(function (t) { return '<li style="margin:3px 0">' + t + '</li>'; }).join("") + '</ul></div>');
+      g.v.map(function (t) { return '<li style="margin:3px 0">' + t + '</li>'; }).join("") + '</ul>' +
+      (g.s ? '<div style="font-size:12px;font-weight:700;letter-spacing:.06em;margin-top:12px;color:' + (dark ? "#98A3B3" : "#5B6675") + '">ÜNLÜ SÖZÜ</div>' +
+        '<blockquote style="margin:6px 0 0;padding:4px 0 4px 12px;border-left:3px solid #FBBF24">' +
+        '<div style="font-size:16px;font-style:italic;font-weight:600">“' + g.s[0] + '”</div>' +
+        '<div style="font-size:12px;opacity:.75;margin-top:4px">“' + g.s[1] + '”</div>' +
+        '<div style="font-size:12px;opacity:.75;margin-top:4px">— ' + x.ad + ', ' + g.s[2] + '</div></blockquote>' : '') + '</div>');
     document.body.appendChild(d); return d;
   });
   var boy = function () {   // içerik ~1180 px; kenar boşluğu dar ekranda portreler gizlenir
-    var bos = (innerWidth - 1180) / 2;
+    // kenar boşluğu: sayfanın arka planlı en geniş içerik kutularının dışında kalan alan (sayfalar farklı genişlikte)
+    var sol = innerWidth, sag = 0;
+    document.querySelectorAll("main *, body > div:not(.tip) *").forEach(function (e) {
+      if (e.offsetWidth < 200 || e.offsetHeight < 50 || e.closest("nav,#siyasi-meseleler,.lider") ) return;
+      if (getComputedStyle(e).backgroundColor === "rgba(0, 0, 0, 0)") return;
+      var r = e.getBoundingClientRect(); if (r.left < sol) sol = r.left; if (r.right > sag) sag = r.right;
+    });
+    var bos = sag > sol ? Math.min(sol, document.documentElement.clientWidth - sag) - 8 : (innerWidth - 1180) / 2;
     var ust = (document.querySelector("nav") || { getBoundingClientRect: function () { return { bottom: 0 }; } }).getBoundingClientRect().bottom + scrollY;
     kutu.forEach(function (d) { d.style.top = ust + "px";
       var gb = d.querySelector(".gorus"); if (gb) { gb.style.width = Math.round(bos - 8) + "px"; gb.style.display = bos >= 200 ? "" : "none"; } d.style.display = bos >= 110 ? "flex" : "none"; var im = d.querySelector("img"); im.style.maxWidth = Math.round(bos + 160) + "px"; im.style.objectFit = "cover"; im.style.objectPosition = "top"; });
   };
-  boy(); addEventListener("resize", boy);
+  boy(); addEventListener("resize", boy); setTimeout(boy, 1500); setTimeout(boy, 5000);   // sayfa içeriği geç çizilebilir
   var s = document.getElementById("siyasi-meseleler");   // fotoğraf lisansları
   if (s) s.lastChild.insertAdjacentHTML("beforeend", '<div style="margin-top:6px">Fotoğraflar (Wikimedia Commons): ' + l.map(function (x) { return x.ad + ": " + x.kredi; }).join(" · ") + '</div>');
 }
