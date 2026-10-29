@@ -112,10 +112,17 @@ function siyasi(n, dark) {
   var b = document.createElement("a");
   b.href = "#siyasi-meseleler";
   b.textContent = "🏛️ Siyasi meseleler ↓";
-  b.setAttribute("style", "order:-1;background:#FBBF24;color:#141B26;text-decoration:none;padding:7px 14px;border-radius:99px;font-weight:800;font-size:15px;" +
-    "box-shadow:0 2px 8px rgba(0,0,0,.25);margin-right:6px");
+  b.setAttribute("style", "position:fixed;right:16px;z-index:60;background:#FBBF24;color:#141B26;text-decoration:none;padding:8px 14px;border-radius:99px;" +
+    "font:800 15px system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 2px 10px rgba(0,0,0,.3)");
   b.onclick = function (e) { e.preventDefault(); document.getElementById("siyasi-meseleler").scrollIntoView({ behavior: "smooth", block: "start" }); };
-  n.insertBefore(b, n.firstChild);
+  document.body.appendChild(b);
+  // Ekranın sağ üstünde durur: menü görünürken onun altında, kaydırınca en üstte; yazının kendisine gelince gizlenir
+  var yer = function () {
+    b.style.top = Math.max(12, n.getBoundingClientRect().bottom + 12) + "px";
+    b.textContent = innerWidth < 600 ? "🏛️ Siyasi ↓" : "🏛️ Siyasi meseleler ↓";   // telefonda başlığı kapatmasın
+    b.style.display = s.getBoundingClientRect().top < innerHeight * .6 ? "none" : "";
+  };
+  addEventListener("scroll", yer, { passive: true }); addEventListener("resize", yer);
   var s = document.createElement("section"); s.id = "siyasi-meseleler";
   var ink = dark ? "#E6EBF2" : "#141B26", mut = dark ? "#98A3B3" : "#5B6675", card = dark ? "#161D28" : "#fff", line = dark ? "#2A3444" : "#DDE2EA";
   s.setAttribute("style", "max-width:1148px;margin:24px auto 32px;padding:20px 22px;background:" + card + ";color:" + ink + ";border:1px solid " + line +
@@ -126,6 +133,7 @@ function siyasi(n, dark) {
     '<div style="font-size:13px;color:' + mut + '">Kaynaklar: ' + y.k.map(function (x) { return '<a href="' + x[1] + '" target="_blank" rel="noopener" style="color:' + (dark ? "#7AA7F0" : "#1F5FBF") + '">' + x[0] + '</a>'; }).join(" · ") +
     ' · <a href="#" onclick="scrollTo({top:0,behavior:\'smooth\'});return false" style="color:' + mut + '">↑ başa dön</a></div>';
   document.body.appendChild(s);
+  yer();
 }
 function yaz(h) { document.open(); document.write(h); document.close(); if (document.body) menu(); else addEventListener("DOMContentLoaded", menu); }
 function al(u) { return fetch(u, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }); }
