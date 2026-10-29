@@ -17,6 +17,7 @@
 // Varsayılan: ilk aktif seçim; yoksa en yakın gelecek seçim; yoksa en son geçmiş seçim.
 var SECIMLER = [
   { id: "abd-2026", ad: "ABD 2026 ara seçimleri", tarih: "3 Kasım 2026", sayim: "2026-11-04T02:00:00+03:00", bitis: "2026-11-06T12:00:00+03:00", repo: "ulmocus-secim/abd-2026" },
+  { id: "bulgaristan-2026", ad: "Bulgaristan cumhurbaşkanlığı seçimi, 2. tur", tarih: "1 Kasım 2026", sayim: "2026-11-01T21:00:00+03:00", bitis: "2026-11-03T12:00:00+03:00", repo: "ulmocus-secim/bulgaristan-2026" },
   { id: "yeni-zelanda-2026", ad: "Yeni Zelanda genel seçimi", tarih: "7 Kasım 2026", sayim: "2026-11-07T09:00:00+03:00", bitis: "2026-11-08T12:00:00+03:00", repo: "ulmocus-secim/yeni-zelanda-2026" },
   { id: "knesset-2026", ad: "İsrail 26. Knesset seçimi", tarih: "27 Ekim 2026", sayim: "2026-10-27T22:00:00+03:00", bitis: "2026-10-29T00:00:00+03:00",
     src: "https://raw.githubusercontent.com/erdemnope-hash/ulmocus-secim/main/index.html", yedek: "https://erdemnope-hash.github.io/ulmocus-secim/" }
@@ -46,6 +47,24 @@ var SIYASI = {
         ["Jeffries konuşma metni (Demokrat lider ofisi)", "https://democraticleader.house.gov/media/press-releases/transcript-leader-jeffries-speech-upon-election-speaker-house"],
         ["Vikipedi: 2026 Senato seçimleri","https://en.wikipedia.org/wiki/2026_United_States_Senate_elections"],
         ["Vikipedi: 2026 ABD seçimleri", "https://en.wikipedia.org/wiki/2026_United_States_elections"]] },
+  "bulgaristan-2026": { guncel: "29 Ekim 2026", p: [
+    "## Kim iktidarda?",
+    "Bulgaristan 2021'den bu yana yedi erken seçim yaşadı. Rosen Jelyazkov hükümeti Aralık 2025'te haftalarca süren yolsuzluk karşıtı protestolar ve bütçe anlaşmazlığı üzerine istifa etti. Cumhurbaşkanı Rumen Radev aktif siyasete girmek için Ocak 2026'da görevden ayrıldı; Anayasa Mahkemesi istifayı 23 Ocak'ta kabul etti ve yardımcısı İliana Yotova ülkenin ilk kadın cumhurbaşkanı oldu. Yotova Şubat'ta merkez bankası başkan yardımcısı Andrey Gyurov'u geçici başbakan atadı. Radev'in yeni kurduğu İlerici Bulgaristan 19 Nisan seçiminde %43,9 oyla 240 sandalyenin 131'ini kazanıp tek başına çoğunluğa ulaştı; Radev Mayıs'ta başbakan oldu. GERB %13,2, Batı yanlısı PP–DB %12,4, DPS %7 aldı; sosyalist BSP 1991'den beri ilk kez meclis dışında kaldı.",
+    "## Neden seçim var?",
+    "Cumhurbaşkanı beş yıllığına doğrudan seçilir. Görevi büyük ölçüde temsilîdir ama ordunun başkomutanıdır, yasaları veto edebilir, uluslararası anlaşmaları imzalar ve büyükelçileri atar. İlk turda kazanmak için hem katılımın %50'yi geçmesi hem de geçerli oyların yarısından fazlası gerekir. 25 Ekim'deki ilk turda katılım yaklaşık %23 ile tarihin en düşüğü oldu; GERB ve Delyan Peevski'nin DPS–Yeni Başlangıç'ı aday çıkarmadı. Türklerin yoğun yaşadığı bölgelerde ve Türkiye'deki seçmenler arasında katılım özellikle düşük kaldı. Yotova %34,8, Gyurov %32 aldı. 1 Kasım'daki ikinci turda katılım şartı yok; en çok oyu alan kazanır.",
+    "## Yarışın ekseni",
+    "Kampanyaya Ukrayna savaşı, Karadeniz'de Bulgar gemilerine yapılan ve Rusya'dan geldiğinden şüphelenilen insansız hava aracı saldırıları, enerji fiyatları ve enflasyon damga vurdu. Yotova bağımsız aday ama İlerici Bulgaristan ve BSP tarafından destekleniyor; savaşın güçle değil müzakereyle bitmesini savunuyor. Analistler onun Avrupa yolunu korurken Rusya ile ilişkileri yumuşatma çizgisini sürdürmesini bekliyor. Gyurov ise PP–DB destekli; geçici başbakanken Kiev'le güvenlik işbirliği anlaşması imzaladı ve Bulgaristan'ı güvenilir bir NATO müttefiki olarak tanımlıyor. Radev ikinci turu \"barış ile savaş arasında\" bir seçim olarak sundu. Gyurov, Yotova'yı televizyon tartışmasına çağırdı; Yotova şimdiye dek reddetti.",
+    "## İkinci turda ne belirleyici?",
+    "Belirleyici olan elenen adayların seçmenleri. Yeniden Doğuş lideri Kostadin Kostadinov (%12,5) Gyurov'a karşı olduğunu açıkladı; MEÇ'in adayı Radostin Vasilev Yotova'ya karşı çıktı, Veliçie'nin adayı İvelin Mihaylov ise Yotova'yı destekliyor. Eleştirmenler Yotova kazanırsa cumhurbaşkanlığının da iktidar çoğunluğunun elinde kalacağını ve denge-denetimin zayıflayacağını söylüyor. İlk turdan önce yapılan tek ikinci tur anketi (Sova Harris) Yotova'ya %65,8 veriyordu; ancak ilk tur sonucu anketlerden çok daha yakın çıktı." ],
+    k: [["Balkan Insight: ikinci tura gidiliyor (26 Ekim)", "https://balkaninsight.com/2026/10/26/bulgarias-presidential-election-heads-to-runoff-after-record-low-turnout/bi/"],
+        ["NBC News / AP: seçimin gündemi", "https://www.nbcnews.com/world/europe/bulgaria-presidential-election-dominated-economic-hardship-ukraine-rcna605501"],
+        ["Al Jazeera: ikinci tur (25 Ekim)", "https://www.aljazeera.com/news/2026/10/25/bulgaria-election-heads-to-a-run-off-amid-low-voter-turnout"],
+        ["Novinite: adayların kaydı", "https://www.novinite.com/articles/240704/Presidential+Race+in+Bulgaria+Opens+With+Yotova+and+Gyurov+Registrations"],
+        ["ЦИК: 1. tur sonuçları", "https://results.cik.bg/pvr202610/rezultati/index.html"],
+        ["BTA: Yotova, Karadeniz'de seyrüsefer güvenliği", "https://www.youtube.com/watch?v=u8ZSDmA_d8g"],
+        ["BGNES: Gyurov, \"Kuralları herkes için aynı tutacağım\"", "https://www.youtube.com/watch?v=rgJiU4fH-G4"],
+        ["Vikipedi: 2026 cumhurbaşkanlığı seçimi", "https://en.wikipedia.org/wiki/2026_Bulgarian_presidential_election"],
+        ["Vikipedi: Nisan 2026 genel seçimi", "https://en.wikipedia.org/wiki/2026_Bulgarian_parliamentary_election"]] },
   "yeni-zelanda-2026": { guncel: "29 Ekim 2026", p: [
     "## Kim iktidarda?",
     "2023 seçiminden bu yana Başbakan Christopher Luxon'un merkez sağ National partisi, liberal-sağ ACT ve popülist NZ First ile üçlü koalisyon hükümeti yürütüyor. Koalisyon anlaşması gereği başbakan yardımcılığı Mayıs 2025'te NZ First lideri Winston Peters'tan ACT lideri David Seymour'a geçti; Peters dışişleri bakanı olarak kaldı. Ana muhalefet, eski başbakan Chris Hipkins liderliğindeki Labour. Yeşiller (eş başkanlar Marama Davidson ve Chlöe Swarbrick) ve Te Pāti Māori (eş başkanlar Debbie Ngarewa-Packer ve Rawiri Waititi) da muhalefette.",
@@ -94,6 +113,9 @@ var LIDER = {
   "abd-2026": [
     { ad: "Hakeem Jeffries", rol: "Demokrat Parti · Meclis'teki Demokrat lider", img: WM + "a/a6/Rep-Hakeem-Jeffries-Official-Portrait_%28cropped%29.jpg/960px-Rep-Hakeem-Jeffries-Official-Portrait_%28cropped%29.jpg", kredi: "Hakeem Jeffries'in ofisi, kamu malı" },
     { ad: "Donald Trump", rol: "Cumhuriyetçi Parti · ABD Başkanı", img: WM + "1/16/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg/960px-Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg", kredi: "Daniel Torok, kamu malı" }],
+  "bulgaristan-2026": [
+    { ad: "Andrey Gyurov", rol: "Bağımsız, PP–DB destekli · eski geçici başbakan", img: WM + "b/b6/Andrey-Gyurov-PM.jpg/960px-Andrey-Gyurov-PM.jpg", kredi: "Bulgaristan Bakanlar Kurulu (government.bg), CC BY 4.0" },
+    { ad: "İliana Yotova", rol: "Bağımsız, İlerici Bulgaristan ve BSP destekli · Cumhurbaşkanı", img: WM + "4/49/President_Iliyana_Yotova_%283x4_cropped%29.jpg/960px-President_Iliyana_Yotova_%283x4_cropped%29.jpg", kredi: "Bulgaristan Cumhurbaşkanlığı (president.bg), CC BY 2.5 BG" }],
   "yeni-zelanda-2026": [
     { ad: "Chris Hipkins", rol: "Labour · ana muhalefet lideri", img: "https://upload.wikimedia.org/wikipedia/commons/5/54/Chris_Hipkins_NZ_Labour_%282%29.jpg", kredi: "New Zealand Labour Party, CC BY-SA 4.0" },
     { ad: "Christopher Luxon", rol: "National · Başbakan", img: "https://upload.wikimedia.org/wikipedia/commons/e/ed/LUXON%2C_Christopher_-_Botany_%28cropped%29.png", kredi: "New Zealand National Party, CC BY-SA 4.0" }],
@@ -111,6 +133,10 @@ var GORUS = {
     v: ["Yeni vergi yok", "Yeni iş ve daha yüksek maaş getiren büyüme", "Bütçe fazlası", "Suçlulara daha ağır yaptırım", "Daha hızlı sağlık hizmeti ve daha çok ilaç", "Zorunlu KiwiSaver emeklilik birikimi, doğum izninin 30 haftaya çıkması"] },
   "Chris Hipkins": { video: ["RBPm_6ev2U0",0,"Başbakan olarak ulusa ilk seslenişi, Ocak 2023 (RNZ)"], i: "Merkez sol, sosyal demokrat: kamu hizmetleri ve hayat pahalılığı.",
     v: ["Konut ve ticari mülk satış kazancına %28 vergi (aile evi ve çiftlikler hariç)", "Herkese yılda 3 ücretsiz aile hekimi ziyareti", "Öğrenci kredisi borcunun %10'unun silinmesi", "Toplu taşımada haftalık ücret tavanı", "Düzenleyici Standartlar Yasası'nın ilk 100 günde kaldırılması"] },
+  "İliana Yotova": { video: ["KmITYm9o2ik",0,"BM Genel Kurulu konuşması: \"Avrupa yalnızca seyirci olamaz\", Eylül 2026 (Birleşmiş Milletler)"], i: "Sol eğilimli, egemenlikçi; Radev çizgisinin devamı: Avrupa yolunda kalırken Rusya ile gerginliği azaltmak.",
+    v: ["Ukrayna savaşında güç yerine müzakereyle barış", "Rusya ile ilişkilerin iyileştirilmesi; analistlere göre yaptırımların gevşetilmesi çağrısı", "\"Sokaklarımızda yabancı bayrakların dalgalanmasına izin vermemek\"", "Karadeniz'de gemi taşımacılığının serbestliği ve güvenliği"] },
+  "Andrey Gyurov": { video: ["kPc8v3X7doo",0,"İlk tur gecesi ilk sözleri: \"Sırt sıvazlama zamanı değil\", 25 Ekim 2026 (bTV)"], i: "Merkez, Batı yanlısı reformcu; AB ve NATO'ya bağlılık, iktidardan bağımsız cumhurbaşkanlığı.",
+    v: ["Ukrayna'ya güçlü destek (geçici başbakanken Kiev'le güvenlik işbirliği anlaşması)", "Hazırlık ve güçlü diplomasiyle çıkarlarını savunan güvenilir bir NATO müttefiki", "\"Bulgaristan'ın Avrupa'da kendi sesi olsun\"", "Tek elde toplanan güce karşı güçlü, bağımsız bir cumhurbaşkanı", "\"Kuralları herkes için aynı tutacağım\""] },
   "Benjamin Netanyahu": { video: ["GAm2RAbAc-Y",0,"\"Savaştayız\" açıklaması, 7 Ekim 2023 (Guardian News)"], i: "Sağ milliyetçi, güvenlik öncelikli; Likud lideri.",
     v: ["İran tehdidine karşı sert çizgi", "Filistin devletine karşı", "\"Güçlü, sağcı, milliyetçi\" bir hükümet", "Arap partileriyle koalisyona hayır"] },
   "Gadi Eisenkot": { video: ["tYjQQUCdJqQ",0,"Seçim gecesi konuşması, 27 Ekim 2026 (Al Jazeera)"], i: "Merkez, güvenlik odaklı; eski genelkurmay başkanı.",
